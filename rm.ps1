@@ -8,6 +8,7 @@ $rootDir = "."
 # Define the directory names
 $directories = @(
     "scripts",
+    "summaries",
     "transcripts"
 )
 
