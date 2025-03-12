@@ -122,8 +122,8 @@ def get_transcript_and_summary(video_id, languages=['en'], transcript_filename="
 
 
 # Example usage:
-video_id = "mk5uTO-QEnE"
-get_transcript_and_summary(video_id, transcript_filename="transcripts/timeWisely.txt", summary_filename="summaries/timeWisely.txt") 
+video_id = "videoID"
+get_transcript_and_summary(video_id, transcript_filename="transcripts/name.txt", summary_filename="summaries/name.txt") 
 "@
 }
 
