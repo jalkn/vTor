@@ -3,9 +3,9 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 # Parámetros del ritmo binaural
-frecuencia_izquierda = 440  # Hz
-frecuencia_derecha = 445  # Hz
-duracion = 5000  # ms
+frecuencia_izquierda = 369  # Hz
+frecuencia_derecha = 369  # Hz
+duracion = 15000  # ms
 sample_rate = 44100  # Hz (frecuencia de muestreo)
 
 # Genera las ondas sinusoidales
