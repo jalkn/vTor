@@ -40,5 +40,5 @@ def get_transcript_and_summary(video_id, languages=['en'], transcript_filename="
 
 
 # Example usage:
-video_id = "CqjsFTjLNyE"
-get_transcript_and_summary(video_id, transcript_filename="transcripts/The DNA-Music Connection.txt", summary_filename="summaries/The DNA-Music Connection.md") 
+video_id = "lrIxQaXaUi0"
+get_transcript_and_summary(video_id, transcript_filename="transcripts/ChatGPT Behaves Like This.txt", summary_filename="summaries/ChatGPT Behaves Like This.md") 
