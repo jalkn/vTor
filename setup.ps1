@@ -45,6 +45,7 @@ function createStructure {
         "transcripts",
         "images",
         "reels",
+        "audios",
         "summaries"
     )
     # Loop through the directory names and create them
