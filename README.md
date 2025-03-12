@@ -1,4 +1,4 @@
-# YouTube Transcript Summarizer
+# Video Transcript Summarizer
 
 This PowerShell script sets up a Python project to download YouTube video transcripts, summarize them, and save both to separate files.
 
