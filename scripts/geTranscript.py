@@ -40,5 +40,5 @@ def get_transcript_and_summary(video_id, languages=['en'], transcript_filename="
 
 
 # Example usage:
-video_id = "d8IZ0L5596s&t"
-get_transcript_and_summary(video_id, transcript_filename="transcripts/Secrets of Reality.txt", summary_filename="summaries/Secrets of Reality.txt") 
+video_id = "CqjsFTjLNyE"
+get_transcript_and_summary(video_id, transcript_filename="transcripts/The DNA-Music Connection.txt", summary_filename="summaries/The DNA-Music Connection.md") 
