@@ -2,6 +2,8 @@
 
 This PowerShell script sets up a Python project to download YouTube video transcripts, summarize them, and save both to separate files.
 
+---
+
 ## Features
 
 * Creates the necessary directory structure (scripts, transcripts, summaries).
@@ -12,12 +14,14 @@ This PowerShell script sets up a Python project to download YouTube video transc
 * Provides a clear and colorful output during the setup process.
 * Cross-platform compatibility (macOS and Windows).
 
+---
 
 ## Prerequisites
 
 * **PowerShell:** This script is designed to run in PowerShell.
 * **Python:**  Make sure Python is installed on your system. The script will create a virtual environment.
 
+---
 
 ## Installation
 
@@ -40,6 +44,8 @@ This script will:
 * Set up a Python virtual environment within the project folder.
 * Install the necessary Python libraries within the virtual environment.
 * Create the `scripts/geTranscript.py` script.
+
+---
 
 ## Usage
 
@@ -71,6 +77,7 @@ To use the transcript summarizer:
    ```
    You can also change the `languages` parameter, `min_length`, and `max_length` of the summary as needed.
 
+---
 
 ## Example
 
@@ -80,11 +87,15 @@ video_id = "nLRL_NcnK-4" # ID of a video about neural networks
 get_transcript_and_summary(video_id, transcript_filename="transcripts/neural_networks.txt", summary_filename="summaries/neural_networks.txt")
 ```
 
+---
+
 ## Troubleshooting
 
 * **Virtual Environment Issues:** If you have problems with the virtual environment, try deleting the `.venv` folder and running `setup.ps1` again.
 * **Python Package Errors:**  Ensure that you're running the Python script within the activated virtual environment.
 * **YouTube API Errors:**  The `youtube-transcript-api` library might raise exceptions if the video doesn't have transcripts or if there are issues connecting to YouTube. Refer to the library's documentation for more details.
+
+---
 
 ## Contributing
 
