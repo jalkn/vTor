@@ -7,9 +7,7 @@ $rootDir = "."
 
 # Define the directory names
 $directories = @(
-    "scripts",
-    "summaries",
-    "transcripts"
+    "scripts"
 )
 
 # Loop through the directory names

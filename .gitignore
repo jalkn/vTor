@@ -2,3 +2,8 @@
 __pycache__
 .venv
 .env
+audios/
+images/
+reels/
+summaries/
+transcripts/

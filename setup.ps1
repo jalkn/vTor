@@ -72,7 +72,9 @@ function createStructure {
     # Create empty Python files
     $files = @(
         "scripts/geTranscript.py",
-        "scripts/reel.py"
+        "scripts/reel.py",
+        "scripts/binaural.py",
+        "scripts/isochronic.py"
 
     )
     foreach ($file in $files) {
@@ -189,6 +191,82 @@ os.remove(temp_video)
 os.remove("audio.mp3")
 
 print(f"Reel created successfully: {output_filename}")
+"@
+
+    # binaural
+    Set-Content -Path "scripts/binaural.py" -Value @"
+import numpy as np
+from pydub import AudioSegment
+from pydub.playback import play
+
+# Parámetros del ritmo binaural
+frecuencia_izquierda = 369  # Hz
+frecuencia_derecha = 369  # Hz
+duracion = 15000  # ms
+sample_rate = 44100  # Hz (frecuencia de muestreo)
+
+# Genera las ondas sinusoidales
+t = np.linspace(0, duracion / 1000, int(sample_rate * duracion / 1000), False)
+onda_izquierda = np.sin(frecuencia_izquierda * 2 * np.pi * t)
+onda_derecha = np.sin(frecuencia_derecha * 2 * np.pi * t)
+
+# Combina las ondas en un array estéreo
+stereo_data = np.array([onda_izquierda, onda_derecha]).T
+
+# Convierte a formato de pydub
+audio = AudioSegment(
+    stereo_data.astype("float32").tobytes(),
+    frame_rate=sample_rate,
+    sample_width=4,
+    channels=2,
+)
+
+# Guarda el audio
+audio.export("audios/binaural.wav", format="wav", bitrate="192k")
+
+"@
+
+    # isochronic
+    Set-Content -Path "scripts/isochronic.py" -Value @"
+from pydub import AudioSegment
+from pydub.generators import Sine
+import matplotlib.pyplot as plt
+import numpy as np
+from pydub import AudioSegment
+
+# Parámetros del tono isocrónico
+frecuencia = 369  # Hz (frecuencia del tono)
+duracion_tono = 50  # ms (duración del tono)
+duracion_silencio = 50 # ms (duración del silencio)
+duracion_total = 15000  # ms (duración total del audio)
+
+# Crea el tono
+tono = Sine(frecuencia).to_audio_segment(duration=duracion_tono)
+
+# Crea el silencio
+silencio = AudioSegment.silent(duration=duracion_silencio)
+
+# Combina el tono y el silencio para crear un ciclo
+ciclo = tono + silencio
+
+# Repite el ciclo para alcanzar la duración total
+audio = ciclo * int(duracion_total / (duracion_tono + duracion_silencio))
+
+# Guarda el audio
+audio.export("audios/isochronico.wav", format="wav")
+
+#images
+audio = AudioSegment.from_file("audios/isochronico.wav", format="wav")
+samples = audio.get_array_of_samples()
+time = np.linspace(0, len(samples) / audio.frame_rate, num=len(samples))
+
+plt.figure(figsize=(10, 4))
+plt.plot(time, samples)
+plt.xlabel("Time (s)")
+plt.ylabel("Amplitude")
+plt.title("Waveform of Isochronic Tone")
+plt.savefig("images/waveform.png")
+plt.show()
 "@
 }
 
