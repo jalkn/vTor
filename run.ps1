@@ -36,7 +36,7 @@ function createStructure {
     # Upgrade pip and install required packages
     Write-Host "Installing required Python packages..." -ForegroundColor $GREEN
     python -m pip install --upgrade pip
-    python -m pip install youtube-transcript-api transformers opencv-python gtts
+    python -m pip install youtube-transcript-api transformers opencv-python gtts tensorflow==2.13.0 transformers==4.31.0
 
     # Create subdirectories
     Write-Host "Creating directory structure..." -ForegroundColor $GREEN
