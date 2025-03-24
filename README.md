@@ -28,7 +28,7 @@ This PowerShell script sets up a Python project to download YouTube video transc
 **Run the setup script:**
 
    ```powershell
-   .\set.ps1
+   .\run.ps1
    ```
 
 This script will:
@@ -78,16 +78,6 @@ To use the transcript summarizer:
 # Example usage within geTranscript.py
 video_id = "nLRL_NcnK-4" # ID of a video about neural networks
 get_transcript_and_summary(video_id, transcript_filename="transcripts/neural_networks.txt", summary_filename="summaries/neural_networks.txt")
-```
-
----
-
-## Limpieza (Opcional)
-
-Para eliminar los resultados generados y comenzar de nuevo, puede ejecutar el siguiente comando:
-
-```Windows
-.\rm.ps1
 ```
 
 ---
